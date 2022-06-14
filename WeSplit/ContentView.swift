@@ -9,14 +9,26 @@ import SwiftUI
 
 struct ContentView: View {
 //    @State private var tapCount = 0 // private to certificate its a strict local variable
-    @State private var name = ""
+//    @State private var name = ""
+    let students = ["Michael", "Jane", "Angela"]
+    @State private var selectedStudent = "Jane"
+    
     var body: some View {
+        NavigationView {
+            Form {
+                Picker("Select your student:", selection: $selectedStudent) {
+                    ForEach(students, id: \.self) {
+                        Text($0)
+                    }
+                }
+            }
+        }
         
-        Form {
+        // ----------------- TWO-WAY BINDIND B.O.C --------------------
+       /* Form {
             TextField("Enter your name", text: $name) // $ -> two-way binding: we bind the text field so that it shows the value of our property, but we also bind it so that any changes to the text field also update the property.
             Text("Your name is: \(name)")
-
-        }
+        } */
         
         // --------------- BUTTON IMPLEMENTATION B.O.C -----------------
        /* Button("TapCount: \(tapCount)") {
