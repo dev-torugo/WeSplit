@@ -1,4 +1,4 @@
-//
+// Quanto pago? -- Quanto deu?
 //  WeSplitApp.swift
 //  WeSplit
 //
